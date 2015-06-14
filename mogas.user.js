@@ -2,7 +2,7 @@
 // @name        mogas
 // @namespace   http://mogas.tejaratasan.ir/*
 // @include     http://mogas.tejaratasan.ir/*
-// @version     1.1.1
+// @version     2.0
 // @grant       none
 // ==/UserScript==
 if (window.location == 'http://mogas.tejaratasan.ir/protected/reqlist.aspx')
@@ -42,11 +42,48 @@ else if (window.location == 'http://mogas.tejaratasan.ir/protected/default.aspx'
 } 
 else if (window.location == 'http://mogas.tejaratasan.ir/protected/approve.aspx')
 {
-    MANaftGazYaraneMovafeghatLitresookht.value = NaftGazYaraneDarkhastLitre.innerHTML
-    MANaftGazYaraneMovafeghatLitre.value = NaftGazYaraneDarkhastLitre.innerHTML
-    MANaftGazYaraneMovafeghatTozihat.value = 'سوخت موتورپمپ چاه آب کشاورزي'
-    MANaftGazYaraneMovafeghatLitreKhorak.value = '0'
-    MANaftGazYaraneMovafeghatZakhireh.value = '0'
+    try{
+        MANaftGazYaraneMovafeghatLitresookht.value = NaftGazYaraneDarkhastLitre.innerHTML
+        MANaftGazYaraneMovafeghatLitre.value = NaftGazYaraneDarkhastLitre.innerHTML
+        MANaftGazYaraneMovafeghatTozihat.value = 'سوخت موتورپمپ چاه آب کشاورزي'
+        MANaftGazYaraneMovafeghatLitreKhorak.value = '0'
+        MANaftGazYaraneMovafeghatZakhireh.value = '0'
+    }
+    catch(err){
+        MAnaftGazMovafeghatLitresookht.value = naftGazDarkhastLitre.innerHTML
+        MAnaftGazMovafeghatLitre.value = naftGazDarkhastLitre.innerHTML
+        MAnaftGazMovafeghatTozihat.value = 'سوخت موتورپمپ چاه آب کشاورزي'
+        MAnaftGazMovafeghatLitreKhorak.value = '0'
+        MAnaftGazMovafeghatZakhireh.value = '0'
+    }
+    RBLMAAction_0.checked="checked" ;
+    var thisDay = getTodayPersian();
+    var y,m,d;
+    y=thisDay[0];
+    m=thisDay[1];
+    d=thisDay[2];
+
+    y.toString();
+    if(m<10){
+       m='0'+m;
+       m.toString();
+    }
+    else
+       m.toString();
+
+    if(d<10){
+       d='0'+m;
+       d.toString();
+    }
+    else
+       d.toString();
+
+    var pdate=y+'/'+m+'/'+d;
+    pdate.toString();
+    
+
+    MAtarikhBazdid.value=pdate;
+    
     MAbtnApprove.click();
     document.onload = aprove_f();
 }
