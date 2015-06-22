@@ -2,7 +2,7 @@
 // @name        mogas
 // @namespace   http://mogas.tejaratasan.ir/*
 // @include     http://mogas.tejaratasan.ir/*
-// @version     2.0
+// @version     2.1
 // @grant       none
 // ==/UserScript==
 if (window.location == 'http://mogas.tejaratasan.ir/protected/reqlist.aspx')
@@ -72,7 +72,7 @@ else if (window.location == 'http://mogas.tejaratasan.ir/protected/approve.aspx'
        m.toString();
 
     if(d<10){
-       d='0'+m;
+       d='0'+d;
        d.toString();
     }
     else
